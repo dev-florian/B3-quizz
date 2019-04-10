@@ -5,18 +5,12 @@ import EndQuizz from './Question/EndQuizz'
 class Engine extends Component {
     constructor() {
         super();
-
-        // this.state = {
-        //     disable: false,
-        //     score: 22222222222,
-        // }
     }
 
     render() {
         return (
             <div className="">
-                <Question disable={this.state.disable} answers={this.state.answers}
-                          validate={() => this.state.validate(answerChecked)}/>
+                <Question disable={this.state.disable} answers={this.state.answers}/>
                 <EndQuizz score={this.state.score}/>
             </div>
 
