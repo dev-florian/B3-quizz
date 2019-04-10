@@ -31,23 +31,12 @@ class Question extends Component {
     render() {
 
         const content = <h2>{this.state.question.contentQuestion}</h2>;
-        // const content = <h2>TEST TITLE</h2>;
-
-        // const content = <h2>{this.props.content}</h2>;
-
-        // let answers = [
-        //     'une frite',
-        //     'une patate',
-        //     'une etsts'
-        // ];
-
         const listAnswers = this.state.question.answers.map((answer, index) =>
-            // const listAnswers = answers.map((answer, index) =>
 
             <div className="anAnswer" key={index}>
-                {/*<label htmlFor="answer">{answer.contentAnswer}</label>*/}
                 <label htmlFor="answer">{answer.contentAnswer}</label>
-                <input disabled={this.props.disable} id="anwser" onChange={() => this.handleChange(answer.contentAnswer)} type="checkbox"/>
+                <input disabled={this.props.disable} id="anwser"
+                       onChange={() => this.handleChange(answer.contentAnswer)} type="checkbox"/>
             </div>
         );
         return (
@@ -55,9 +44,8 @@ class Question extends Component {
                 {content}
                 {listAnswers}
                 <div className="save">
-                    {/*<button disabled={this.props.disable} onClick={() => console.log("test")}>save</button>*/}
-
-                    <button disabled={this.props.disable} onClick={() => this.props.validate(this.state.answerChecked)}>Save
+                    <button disabled={this.props.disable}
+                            onClick={() => this.props.validate(this.state.answerChecked)}>Save
                     </button>
                 </div>
             </div>
